@@ -4,7 +4,7 @@ Provider for creating fake scenarios
 
 # Faker Cinema
 
-[![Packagist](https://img.shields.io/packagist/dt/xylis/faker-besson-scenario-provider.svg?style=flat-square)](https://packagist.org/packages/xylis/faker-besson-scenario)
+[![Packagist](https://img.shields.io/packagist/dt/xylis/faker-besson-scenario-provider.svg?style=flat-square)](https://packagist.org/packages/xylis/faker-besson-scenario-provider)
 [![Travis Build Status](https://img.shields.io/travis/JulienRAVIA/FakerBessonScenarioProvider/master?style=flat-square)](https://travis-ci.org/JulienRAVIA/FakerBessonScenarioProvider)
 
 A growing collection of useful Providers for [fzaninotto/faker](https://github.com/fzaninotto/faker) mostly ported to PHP from the [stympy/faker](https://github.com/stympy/faker) Ruby library.
@@ -18,7 +18,7 @@ A growing collection of useful Providers for [fzaninotto/faker](https://github.c
 ## Installation
 
 ```bash
-composer require xylis/faker-besson-scenario
+composer require xylis/faker-besson-scenario-provider
 ```
 
 ## Formatters
