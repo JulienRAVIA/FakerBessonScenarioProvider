@@ -46,5 +46,4 @@ All contributions are welcome. Before opening PRs, make sure that all tests are 
 
 ```bash
 .\vendor\bin\phpunit
-.\vendor\bin\phpstan
 ```

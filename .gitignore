@@ -1,4 +1,5 @@
 /.idea/
 /vendor/
 .php-version
+composer.lock
 
