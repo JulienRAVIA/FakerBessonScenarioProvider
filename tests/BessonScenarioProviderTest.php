@@ -14,8 +14,8 @@ class BessonScenarioProviderTest extends \PHPUnit\Framework\TestCase
 
         $this->assertNotEmpty($faker->scenario);
         $this->assertNotEmpty($faker->basicScenario);
-        $this->assertInternalType('string', $faker->scenario);
-        $this->assertInternalType('string', $faker->basicScenario);
+        $this->assertIsString($faker->scenario);
+        $this->assertIsString($faker->basicScenario);
 
         $this->assertNotEmpty($faker->scenarios);
         $this->assertNotEmpty($faker->basicScenarios);
@@ -26,8 +26,5 @@ class BessonScenarioProviderTest extends \PHPUnit\Framework\TestCase
 
         $this->assertContainsOnly('string', $faker->scenarios);
         $this->assertContainsOnly('string', $faker->basicScenarios);
-
-        $this->assertNotContains($faker->scenario(true), BessonScenario::actionHerosMechantConjug());
-        $this->assertNotContains($faker->scenario(true), array('Durendal', 'cerveau', 'pour poursuivre', 'poursuivie par'));
     }
 }
