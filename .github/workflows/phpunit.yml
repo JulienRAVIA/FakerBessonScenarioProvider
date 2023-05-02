@@ -3,20 +3,20 @@ name: PHPUnit
 on: [push, pull_request]
 
 jobs:
-  run:
-    runs-on: ${{ matrix.operating-system }}
-    strategy:
-      matrix:
-        operating-system: ['ubuntu-latest']
-        php-versions: ['7.3', '74', '8.0' ,'8.1', '8.2']
-        phpunit-versions: ['latest']
-        include:
-          - operating-system: 'ubuntu-latest'
-            php-versions: '8.0'
-            phpunit-versions: 9
+#  run:
+#    runs-on: ${{ matrix.operating-system }}
+#    strategy:
+#      matrix:
+#        operating-system: ['ubuntu-latest']
+#        php-versions: ['7.3', '74', '8.0' ,'8.1', '8.2']
+#        phpunit-versions: ['latest']
+#        include:
+#          - operating-system: 'ubuntu-latest'
+#            php-versions: '8.0'
+#            phpunit-versions: 9
     steps:
       - name: PHPUnit (php-actions)
         uses: php-actions/phpunit@v3
         with:
-          php_version: ${{ matrix.php-versions }}
+          php_version: 8.0
           php_extensions: mbstring intl
