@@ -23,5 +23,4 @@ jobs:
           ini-values: post_max_size=256M, max_execution_time=180
           tools: phpunit:${{ matrix.phpunit-versions }}
       - name: 'Run unit tests'
-        run: |
-          vendor/bin/phpunit
+        run: phpunit
