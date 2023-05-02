@@ -6,7 +6,7 @@ use Faker\Provider\Base as FakerProvider;
 
 class BessonScenario extends FakerProvider
 {
-    protected static $basicScenarios = array(
+    protected static $basicScenarios = [
         '{{ heroCostaud }} {{ actionVoiture }} pour poursuivre {{ mechants }}',
         '{{ heroCostaud }} {{ actionVoiture }} pour poursuivre {{ mechants }} en {{lieu }}',
         '{{ heroCostaud }} {{ actionHerosMechant }} {{ mechants }} en {{ lieuVoiture }}',
@@ -20,9 +20,9 @@ class BessonScenario extends FakerProvider
         '{{ heroCostaud }} {{ actionHeroVictime }} {{ victime }} {{ sortVictime }} par {{ mechants }} en {{ lieu }}',
         '{{ heroCostaud }} {{ actionHeroVictime }} {{ victime }} {{ sortVictime }} par {{ mechants }}',
         '{{ heroCostaud }} court après {{ groupeMechants }} mongoliens qui sautent partout'
-    );
+    ];
 
-    protected static $scenarios = array(
+    protected static $scenarios = [
         'Un Transporteur {{ actionTransporteur }} {{ victimeTransporteur }} en {{ voiture }} poursuivie par 
         {{ mechants }}',
         'Un Transporteur {{ actionTransporteur }} {{ victimeTransporteur }} en {{ voiture }} poursuivie par 
@@ -45,25 +45,25 @@ class BessonScenario extends FakerProvider
         {{ groupeMechants }}',
         '{{ heroCostaud }} utilise 10% de son cerveau et {{ actionVoiture }} pour {{ actionHerosMechantConjug }} 
         {{ groupeMechants }} en {{ lieu }}',
-    );
+    ];
 
-    protected static $herosCostaud = array(
+    protected static $herosCostaud = [
         'Léon', 'Un flic', 'Nikita', 'Un Yamakasi', 'Bruce Willis', 'Un tueur a gages', 'Un chauffeur de Taxi',
         'Liam Neeson', 'Un flic déguisé en racaille', 'Jean Reno', 'Un Dauphin tueur à gages'
-    );
+    ];
 
-    protected static $victime = array(
+    protected static $victime = [
         'une pute', 'une chinoise', 'une pute devenue Agent secret', 'un chinoise déguisée en pute',
         'une pute déguisée en chinoise'
-    );
+    ];
 
-    protected static $mechants = array(
+    protected static $mechants = [
         'des ninjas', 'des yamakasi', 'des chinois', 'des chinois (ça coute moins cher)', 'des roumains',
         'des méchants', 'des chinois déguisés en Yamakasi', 'des chinois déguisés en Ninjas',
         'des chinois déguisés en Racailles', 'des chinois déguisés en Roumains', 'des chinois déguisés en Père Noel'
-    );
+    ];
 
-    protected static $mechant = array(
+    protected static $mechant = [
         'un chinois', 'un yamakasi', 'une racaille', 'un gros black', 'un ninja', 'un roumain', 'un flic',
         'un chinois déguisé en Ninja', 'un chinois déguisé en Yamakasi', 'un chinois déguisé en gros black',
         'un chinois déguisé en roumain', 'un chinois déguisé en racaille', 'un chinois déguisé en père noel',
@@ -73,39 +73,39 @@ class BessonScenario extends FakerProvider
         'une racaille déguisée en chinois', 'une racaille déguisée en chinois', 'un roumain déguisé en père noel',
         'un roumain déguisé en Yamakasi', 'un roumain déguisé en Ninja', 'un roumain déguisé en Chinois',
         'un roumain déguisé en gros black', 'un roumain déguisé en racaille', 'un roumain déguisé en père noel',
-    );
+    ];
 
-    protected static $lieu = array(
+    protected static $lieu = [
         'banlieue', 'Albanie', 'Province'
-    );
+    ];
 
-    protected static $voiture = array(
+    protected static $voiture = [
         'Audi', 'Taxi'
-    );
+    ];
 
-    protected static $actionVoiture = array(
+    protected static $actionVoiture = [
         'conduit une Audi', 'conduit un Taxi'
-    );
+    ];
 
-    protected static $actionHerosVictime = array(
+    protected static $actionHerosVictime = [
         'protège', 'sauve',
-    );
+    ];
 
-    protected static $actionHerosMechant = array(
+    protected static $actionHerosMechant = [
         'tabasse', 'poursuit', 'pète la gueule à',
-    );
+    ];
 
-    protected static $actionHerosMechantConjug = array(
+    protected static $actionHerosMechantConjug = [
         'tabasser', 'poursuivre', 'pèter la gueule à'
-    );
+    ];
 
-    protected static $sortVictime = array(
+    protected static $sortVictime = [
         'poursuivie', 'enlevée', 'kidnappée'
-    );
+    ];
 
-    protected static $actionMechantVictime = array(
+    protected static $actionMechantVictime = [
         'ont kidnappé', 'ont enlevé', 'sequestrent'
-    );
+    ];
 
     public static function heroCostaud()
     {
@@ -132,7 +132,7 @@ class BessonScenario extends FakerProvider
 
     public static function victimeTransporteur()
     {
-        return static::randomElement(array('une chinoise', 'une pute'));
+        return static::randomElement(['une chinoise', 'une pute']);
     }
 
     /**
@@ -148,7 +148,7 @@ class BessonScenario extends FakerProvider
      */
     public static function actionTransporteur()
     {
-        return static::randomElement(array('transporte', 'protège'));
+        return static::randomElement(['transporte', 'protège']);
     }
 
     public static function sortVictime()
@@ -237,7 +237,7 @@ class BessonScenario extends FakerProvider
      */
     public function basicScenarios($count = 3)
     {
-        $scenarios = array();
+        $scenarios = [];
 
         for ($i = 0; $i < $count; $i++) {
             $scenarios[] = $this->basicScenario();
@@ -253,7 +253,7 @@ class BessonScenario extends FakerProvider
      */
     public function scenarios($count = 3, $withBasic = true)
     {
-        $scenarios = array();
+        $scenarios = [];
 
         for ($i = 0; $i < $count; $i++) {
             $scenarios[] = $this->scenario($withBasic);
