@@ -14,8 +14,8 @@ class BessonScenarioProviderTest extends \PHPUnit\Framework\TestCase
 
         $this->assertNotEmpty($faker->scenario);
         $this->assertNotEmpty($faker->basicScenario);
-        $this->assertInternalType('string', $faker->scenario);
-        $this->assertInternalType('string', $faker->basicScenario);
+        $this->assertIsString($faker->scenario);
+        $this->assertIsString($faker->basicScenario);
 
         $this->assertNotEmpty($faker->scenarios);
         $this->assertNotEmpty($faker->basicScenarios);
