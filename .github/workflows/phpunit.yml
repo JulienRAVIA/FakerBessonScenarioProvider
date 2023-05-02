@@ -3,8 +3,8 @@ name: PHPUnit
 on: [push, pull_request]
 
 jobs:
-#  run:
-#    runs-on: ${{ matrix.operating-system }}
+  run:
+    runs-on: ubuntu-latest
 #    strategy:
 #      matrix:
 #        operating-system: ['ubuntu-latest']
