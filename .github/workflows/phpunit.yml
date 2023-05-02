@@ -45,4 +45,4 @@ jobs:
       # Tests
       - name: Run unit tests
         run: |
-          php bin/phpunit --stop-on-failure
+          php vendor/bin/phpunit --stop-on-failure
