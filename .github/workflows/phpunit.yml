@@ -4,19 +4,21 @@ on: [push, pull_request]
 
 jobs:
   run:
-    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        operating-system: ['ubuntu-latest']
-#        php-versions: ['7.3', '74', '8.0' ,'8.1', '8.2']
-#        phpunit-versions: ['latest']
-#        include:
-#          - operating-system: 'ubuntu-latest'
-#            php-versions: '8.0'
-#            phpunit-versions: 9
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: ['ubuntu-latest']
+        php-versions: ['7.2', '7.3', '8.0', '8.1', '8.2']
+        phpunit-versions: ['latest']
+        include:
+          - operating-system: 'ubuntu-latest'
+            php-versions: '8.0'
+            phpunit-versions: 9
     steps:
-      - name: PHPUnit (php-actions)
-        uses: php-actions/phpunit@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          php_version: 8.0
-          php_extensions: mbstring intl
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, intl
+          ini-values: post_max_size=256M, max_execution_time=180
+          tools: phpunit:${{ matrix.phpunit-versions }}
